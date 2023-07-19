@@ -6,7 +6,10 @@ const mealSchema = new Schema({
     ingredients: String,
     preparation: String,
     imageUrl: String,
-    owner: { type: Schema.Types.ObjectId, ref: "User" },
+    owner: { 
+      type: Schema.Types.ObjectId,
+       ref: "User" 
+      },
  
   });
 

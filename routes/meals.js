@@ -24,23 +24,11 @@ router.get('/', (req, res, next) => {
  
 });
 
-// ROUTE CREATE MEAL (GET)
-router.get('/', (req, res, next) => {
 
-    Meal.find()
-    .populate('owner')
-    .then((foundMeals) => {       
-        res.render('meals/all-meals.hbs', { meals: foundMeals })
-    })
-    .catch((err) => {
-        console.log(err)
-        next(err)
-    })
- 
-});
+// ROUTE CREATE MEAL (GET)
 
 router.get('/create', isLoggedIn, (req, res, next) => {
-    res.render('meals/create-meals.hbs')
+    res.render('meals/create-meal.hbs')
 })
 
 //ROUTE CREATE MEAL(POST)
@@ -72,10 +60,7 @@ router.get('/details/:mealId', (req, res, next) => {
 
     Meal.findById(req.params.mealId)
     .populate('owner')
-    .populate({
-        path: 'reviews', 
-        populate: {path: 'user'}
-    })
+   
     .then((foundMeal) => {
         console.log("Found Meal", foundMeal)
         res.render('meals/meal-details.hbs', foundMeal)
@@ -132,11 +117,11 @@ router.post('/edit/:mealId', isLoggedIn, isOwner, (req, res, next) => {
 })
 
 //ROUTES DELETE MEAL
-router.get('/delete/:mealsId', isLoggedIn, isOwner, (req, res, next) => {
+router.get('/delete/:mealId', isLoggedIn, isOwner, (req, res, next) => {
     
     Meal.findByIdAndDelete(req.params.mealId)
     .then((deletedMeal) => {
-        console.log("Deleted meals:", deletedMeal)
+        console.log("Deleted meal:", deletedMeal)
         res.redirect('/meals')
     })
     .catch((err) => {

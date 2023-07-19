@@ -1,0 +1,10 @@
+<h2>All meals</h2>
+
+{{#each meals}}
+
+    <a href="/meals/details/{{_id}}">
+        <p>{{name}} added by: {{owner.fullName}}</p>   
+    </a>
+    <hr>
+
+{{/each}}

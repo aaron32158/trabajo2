@@ -1,22 +1,19 @@
 {{!-- views/auth/login.hbs --}}
 
-<div id="form">
-  <h2>Login</h2>
+<div>
+    <h2>Login</h2>
+    <form action="/auth/login" method="POST">
 
-  <form action="/auth/login" method="POST">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" />
 
-    <label> Email
-      <input type="email" name="email" placeholder="rockstar@ironhack.com" />
-    </label>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
 
-    <label>Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+        <button type="submit">Login</button>
 
-    <button type="submit">Login</button>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+        {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+        {{/if}}
+    </form>
 </div>

@@ -1,0 +1,22 @@
+<h2>Edit Meal</h2>
+
+<form action="/meals/edit/{{_id}}" method="post">
+
+     <label for="name">Name</label>
+    <input id="name" type="text" name="name" value="{{name}}">
+
+    <label for="calories">Calories</label>
+    <input id="calories" type="text" name="calories" value="{{calories}}">
+
+    <label for="ingredients">Ingredients</label>
+    <input id="ingredients" type="text" name="ingredients" value="{{ingredients}}">
+
+    <label for="preparation">Preparation</label>
+    <input id="preparation" type="text" name="preparation" value="{{preparation}}">
+
+    <label for="imageUrl">Image</label>
+    <input id="imageUrl" type="text" name="imageUrl" value="{{imageUrl}}">
+
+    <button type="submit">Edit Meal</button>
+
+</form>
