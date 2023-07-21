@@ -1,6 +1,8 @@
 body {
+
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(205, 247, 201);
 }
 
 a {
@@ -11,5 +13,5 @@ img {
 }
 
 .titleHP{
-  color: blueviolet;
+  color: rgb(88, 57, 10);
 }
