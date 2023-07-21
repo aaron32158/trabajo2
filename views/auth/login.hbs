@@ -1,16 +1,16 @@
 {{!-- views/auth/login.hbs --}}
 
-<div>
-    <h2>Login</h2>
+<div id="signup">
+    
     <form action="/auth/login" method="POST">
-
+<h2>Login</h2>
         <label for="email">Email</label>
-        <input id="email" type="text" name="email" />
+        <input id="email" class="input" type="text" name="email" />
 
         <label for="password">Password</label>
-        <input id="password" type="password" name="password" />
+        <input id="password" class="input" type="password" name="password" />
 
-        <button type="submit">Login</button>
+        <button  type="submit" class="buton">Login</button>
 
         {{#if errorMessage}}
         <p>{{errorMessage}}</p>
